@@ -1,4 +1,4 @@
-package com.espol.pronosticosmundial;
+package com.example.proy2p_chavez_luna_martnezgutirrez;
 
 public abstract class Usuario {
     protected String idUsuario;
