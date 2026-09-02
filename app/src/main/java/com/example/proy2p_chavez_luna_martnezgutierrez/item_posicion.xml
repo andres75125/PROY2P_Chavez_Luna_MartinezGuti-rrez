@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Diseño de fila individual para la Tabla de Posiciones.
+    Muestra la posición numérica, el nombre del participante y su puntaje acumulado.
+
+    @author Andres Martínez
+    @version 1.0
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="12dp">
+
+    <!-- Número de posición -->
+    <TextView
+        android:id="@+id/tvPosicion"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#102A6B"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="1" />
+
+    <!-- Nombre completo del participante -->
+    <TextView
+        android:id="@+id/tvNombreParticipante"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        tools:text="Juan Pérez" />
+
+    <!-- Puntos acumulados -->
+    <TextView
+        android:id="@+id/tvPuntaje"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:textColor="#102A6B"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="125" />
+
+</LinearLayout>
