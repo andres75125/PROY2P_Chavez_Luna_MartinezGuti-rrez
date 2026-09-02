@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Pantalla de Actualización de Puntajes para el Administrador.
+
+    @author Andres Martínez
+    @version 1.0
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Actualizar puntajes"
+            android:textColor="#102A6B"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Card con explicación del recálculo -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardBackgroundColor="#E8EAF6"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                android:text="Esta opción calcula los puntos de todos los participantes tomando en cuenta los resultados oficiales de los partidos finalizados."
+                android:textColor="#3F51B5"
+                android:textSize="12sp" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Reglas de Puntuación -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Reglas de puntuación por partido"
+            android:textColor="#102A6B"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="4dp"
+                android:text="• 3 puntos: Acierta el marcador exacto."
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="4dp"
+                android:text="• 2 puntos: Acierta el ganador y la diferencia de goles."
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="4dp"
+                android:text="• 2 puntos: Acierta un empate (sin importar el marcador exacto)."
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="4dp"
+                android:text="• 1 punto: Acierta únicamente el ganador del partido."
+                android:textColor="#333333"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="4dp"
+                android:text="• 0 puntos: Cualquier otro caso."
+                android:textColor="#333333"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Botón principal de acción -->
+        <Button
+            android:id="@+id/btnActualizarPuntajes"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#2E7D32"
+            android:text="Actualizar puntajes"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
+            app:cornerRadius="25dp" />
+
+        <!-- Botón Volver -->
+        <Button
+            android:id="@+id/btnVolverMenu"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#102A6B"
+            android:text="Volver al menú principal"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
+</ScrollView>
