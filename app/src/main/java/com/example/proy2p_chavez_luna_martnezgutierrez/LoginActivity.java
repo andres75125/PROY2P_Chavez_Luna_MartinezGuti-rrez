@@ -15,6 +15,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Copia preventiva de los archivos .txt desde assets
         GestorArchivos.copiarAssetsAInterno(this);
 
         etUsuario = findViewById(R.id.etUsuario);
@@ -35,19 +36,29 @@ public class LoginActivity extends AppCompatActivity {
         String p = etContrasena.getText().toString().trim();
 
         if (u.isEmpty() || p.isEmpty()) {
-            throw new CredencialesInvalidasException("El usuario o la contraseña son incorrectos.");
+            throw new CredencialesInvalidasException("Debe ingresar el usuario y la contraseña.");
         }
 
         List<Usuario> usuarios = GestorArchivos.cargarUsuarios(this);
         for (Usuario usr : usuarios) {
-            if (usr.getNombreUsuario().equals(u) && usr.getContrasena().equals(p)) {
+            // Se usa equalsIgnoreCase para el nombre de usuario y equals para la clave
+            if (usr.getNombreUsuario().equalsIgnoreCase(u) && usr.getContrasena().equals(p)) {
                 Intent intent;
                 if (usr instanceof Participante) {
                     intent = new Intent(this, MenuParticipanteActivity.class);
+                    Participante part = (Participante) usr;
+                    intent.putExtra("PUNTAJE_ACUMULADO", part.getPuntajeAcumulado());
                 } else {
                     intent = new Intent(this, MenuAdminActivity.class);
+                    Administrador admin = (Administrador) usr;
+                    intent.putExtra("CARGO", admin.getCargo());
                 }
+
+                // Datos clave para la sesión
+                intent.putExtra("ID_USUARIO", usr.getIdUsuario());
                 intent.putExtra("NOMBRE_COMPLETO", usr.getNombreCompleto());
+                intent.putExtra("TIPO_USUARIO", usr.getTipoUsuario());
+
                 startActivity(intent);
                 finish();
                 return;
