@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvBienvenida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#1A237E"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnAdminPartidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Administrar partidos"
+        android:enabled="false"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnActualizarPuntajes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar puntajes"
+        android:enabled="false"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:backgroundTint="#D32F2F"/>
+</LinearLayout>
